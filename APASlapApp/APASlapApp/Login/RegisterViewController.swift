@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  APASlapApp
 //
 //  Created by Jeffrey Linwood on 6/3/17.
@@ -10,66 +10,57 @@ import UIKit
 
 import Firebase
 
-class LoginViewController: BaseViewController {
+class RegisterViewController: BaseViewController {
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
-    func showNewsFeed() {
-        let storyboard = UIStoryboard.init(name: "NewsFeed", bundle: nil)
-        if let vc = storyboard.instantiateInitialViewController() {
-            present(vc, animated: false, completion: nil)
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if let auth = FIRAuth.auth() {
-            if auth.currentUser != nil {
-                showNewsFeed()
-            }
-        }
-       
-    }
 
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func login(_ sender: Any) {
+    @IBAction func signUp(_ sender: Any) {
         
-        if (emailTextField.text == "") {
-            showErrorMessage(errorMessage:"Email can not be blank.")
-            return
-        }
-        
-        if (passwordTextField.text == "") {
+        if (passwordTextField.text == "" && confirmPasswordTextField.text == "") {
             showErrorMessage(errorMessage:"Password can not be blank.")
             return
         }
         
+        if (passwordTextField.text != confirmPasswordTextField.text) {
+            showErrorMessage(errorMessage:"Passwords have to match. Please try again.")
+        }
         
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
         if let auth = FIRAuth.auth() {
-            auth.signIn(withEmail: email, password: password, completion: { (user, error) in
+            auth.createUser(withEmail: email, password: password) { (user, error) in
                 if let error = error {
                     self.showErrorMessage(errorMessage:error.localizedDescription)
                     return
                 } else {
-                    self.showNewsFeed()
+                    self.navigationController?.popViewController(animated: true)
                 }
-            })
+            }
+
+        } else {
+            showErrorMessage(errorMessage:"Unable to process signup")
         }
         
     }
+
+  
+
 }

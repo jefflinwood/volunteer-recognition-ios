@@ -19,6 +19,8 @@
 		28E0D38F1EE318DA00636841 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E0D38E1EE318DA00636841 /* NewsFeed.storyboard */; };
 		28E0D3921EE31A0200636841 /* NewAwesomeness.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E0D3911EE31A0200636841 /* NewAwesomeness.storyboard */; };
 		28E0D3961EE31A4500636841 /* NewAwesomenessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3951EE31A4500636841 /* NewAwesomenessViewController.swift */; };
+		28E0D3991EE3204D00636841 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3981EE3204D00636841 /* RegisterViewController.swift */; };
+		28E0D39D1EE3258100636841 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D39C1EE3258100636841 /* BaseViewController.swift */; };
 		71B789E7C20129CCA5F73A3F /* Pods_APASlapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		28E0D38E1EE318DA00636841 /* NewsFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = NewsFeed.storyboard; path = NewsFeed/NewsFeed.storyboard; sourceTree = "<group>"; };
 		28E0D3911EE31A0200636841 /* NewAwesomeness.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = NewAwesomeness.storyboard; path = Awesomeness/NewAwesomeness.storyboard; sourceTree = "<group>"; };
 		28E0D3951EE31A4500636841 /* NewAwesomenessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewAwesomenessViewController.swift; path = Awesomeness/NewAwesomenessViewController.swift; sourceTree = "<group>"; };
+		28E0D3981EE3204D00636841 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Login/RegisterViewController.swift; sourceTree = "<group>"; };
+		28E0D39C1EE3258100636841 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5A6929A4C8744EF2997B634D /* Pods-APASlapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.debug.xcconfig"; sourceTree = "<group>"; };
 		648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APASlapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EF2C0E3E5CCC7C022A089 /* Pods-APASlapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,24 +82,26 @@
 			children = (
 				28E0D3901EE319DE00636841 /* Awesomeness */,
 				28E0D38B1EE3189500636841 /* NewsFeed */,
-				28E0D3861EE317E100636841 /* Login */,
+				28E0D3861EE317E100636841 /* Login and Signup */,
 				28E0D3721EE313FB00636841 /* AppDelegate.swift */,
 				28E0D3741EE313FB00636841 /* ViewController.swift */,
 				28E0D3761EE313FB00636841 /* Main.storyboard */,
 				28E0D3791EE313FB00636841 /* Assets.xcassets */,
 				28E0D37B1EE313FB00636841 /* LaunchScreen.storyboard */,
 				28E0D37E1EE313FB00636841 /* Info.plist */,
+				28E0D39C1EE3258100636841 /* BaseViewController.swift */,
 			);
 			path = APASlapApp;
 			sourceTree = "<group>";
 		};
-		28E0D3861EE317E100636841 /* Login */ = {
+		28E0D3861EE317E100636841 /* Login and Signup */ = {
 			isa = PBXGroup;
 			children = (
 				28E0D3871EE3185900636841 /* Login.storyboard */,
 				28E0D3891EE3187800636841 /* LoginViewController.swift */,
+				28E0D3981EE3204D00636841 /* RegisterViewController.swift */,
 			);
-			name = Login;
+			name = "Login and Signup";
 			sourceTree = "<group>";
 		};
 		28E0D38B1EE3189500636841 /* NewsFeed */ = {
@@ -263,7 +269,9 @@
 				28E0D38A1EE3187800636841 /* LoginViewController.swift in Sources */,
 				28E0D3751EE313FB00636841 /* ViewController.swift in Sources */,
 				28E0D3731EE313FB00636841 /* AppDelegate.swift in Sources */,
+				28E0D3991EE3204D00636841 /* RegisterViewController.swift in Sources */,
 				28E0D3961EE31A4500636841 /* NewAwesomenessViewController.swift in Sources */,
+				28E0D39D1EE3258100636841 /* BaseViewController.swift in Sources */,
 				28E0D38D1EE318C900636841 /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
