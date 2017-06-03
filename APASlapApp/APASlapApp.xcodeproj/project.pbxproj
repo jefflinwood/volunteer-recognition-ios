@@ -12,6 +12,7 @@
 		28E0D3781EE313FB00636841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E0D3761EE313FB00636841 /* Main.storyboard */; };
 		28E0D37A1EE313FB00636841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E0D3791EE313FB00636841 /* Assets.xcassets */; };
 		28E0D37D1EE313FB00636841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E0D37B1EE313FB00636841 /* LaunchScreen.storyboard */; };
+		28E0D3851EE3154B00636841 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E0D3841EE3154B00636841 /* GoogleService-Info.plist */; };
 		71B789E7C20129CCA5F73A3F /* Pods_APASlapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		28E0D3791EE313FB00636841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28E0D37C1EE313FB00636841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28E0D37E1EE313FB00636841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28E0D3841EE3154B00636841 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A6929A4C8744EF2997B634D /* Pods-APASlapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.debug.xcconfig"; sourceTree = "<group>"; };
 		648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APASlapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EF2C0E3E5CCC7C022A089 /* Pods-APASlapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 		28E0D3661EE313FB00636841 = {
 			isa = PBXGroup;
 			children = (
+				28E0D3841EE3154B00636841 /* GoogleService-Info.plist */,
 				28E0D3711EE313FB00636841 /* APASlapApp */,
 				28E0D3701EE313FB00636841 /* Products */,
 				E6094FD715651FF54374FB80 /* Pods */,
@@ -153,6 +156,7 @@
 				28E0D37D1EE313FB00636841 /* LaunchScreen.storyboard in Resources */,
 				28E0D37A1EE313FB00636841 /* Assets.xcassets in Resources */,
 				28E0D3781EE313FB00636841 /* Main.storyboard in Resources */,
+				28E0D3851EE3154B00636841 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +382,7 @@
 				28E0D3831EE313FB00636841 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
