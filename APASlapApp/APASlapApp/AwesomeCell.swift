@@ -11,6 +11,7 @@ import UIKit
 class AwesomeCell: UITableViewCell {
     
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageImageView: UIImageView!
 
 
     override func awakeFromNib() {

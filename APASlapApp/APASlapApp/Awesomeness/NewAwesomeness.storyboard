@@ -68,10 +68,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nba-GW-ZJd">
+                                <rect key="frame" x="16" y="218" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BCF-2Z-w23"/>
+                                </constraints>
+                                <state key="normal" title="Add a Photo from your Library"/>
+                                <connections>
+                                    <action selector="addAPhoto:" destination="fdX-Vb-FY4" eventType="touchUpInside" id="VNn-aY-HeN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JqH-6n-d4r" firstAttribute="top" secondItem="9ch-gN-zPl" secondAttribute="bottom" constant="8" id="314-C3-yt2"/>
+                            <constraint firstItem="nba-GW-ZJd" firstAttribute="trailing" secondItem="JqH-6n-d4r" secondAttribute="trailing" id="89i-6Q-kBW"/>
                             <constraint firstItem="qDY-7W-B7a" firstAttribute="centerX" secondItem="d7M-YQ-2ld" secondAttribute="centerX" id="8y9-hf-gHc"/>
                             <constraint firstItem="9ch-gN-zPl" firstAttribute="trailing" secondItem="d7M-YQ-2ld" secondAttribute="trailingMargin" id="E6E-cf-Ydx"/>
                             <constraint firstItem="JqH-6n-d4r" firstAttribute="trailing" secondItem="9ch-gN-zPl" secondAttribute="trailing" id="G1a-fY-Xmb"/>
@@ -82,7 +93,9 @@
                             <constraint firstItem="9ch-gN-zPl" firstAttribute="leading" secondItem="d7M-YQ-2ld" secondAttribute="leadingMargin" id="cYP-e9-aIo"/>
                             <constraint firstItem="9ch-gN-zPl" firstAttribute="top" secondItem="yO2-9c-IL1" secondAttribute="bottom" constant="23" id="e6E-IX-3dP"/>
                             <constraint firstItem="qDY-7W-B7a" firstAttribute="centerY" secondItem="yO2-9c-IL1" secondAttribute="centerY" id="iib-rt-KtO"/>
+                            <constraint firstItem="nba-GW-ZJd" firstAttribute="top" secondItem="JqH-6n-d4r" secondAttribute="bottom" constant="8" id="kc3-iJ-L91"/>
                             <constraint firstItem="yO2-9c-IL1" firstAttribute="leading" secondItem="d7M-YQ-2ld" secondAttribute="leadingMargin" id="oXc-25-tal"/>
+                            <constraint firstItem="nba-GW-ZJd" firstAttribute="leading" secondItem="JqH-6n-d4r" secondAttribute="leading" id="wUw-au-AWy"/>
                         </constraints>
                     </view>
                     <connections>

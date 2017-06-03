@@ -48,9 +48,17 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AwesomeCell", for: indexPath) as! AwesomeCell
+        var cell:AwesomeCell
         let awesome = awesomes[indexPath.row]
+        if (awesome["imageStorageRefId"] != nil) {
+            cell = tableView.dequeueReusableCell(withIdentifier: "AwesomeCellWithImage", for: indexPath) as! AwesomeCell
+            cell.messageImageView.image = UIImage(named: "logo_apa")
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "AwesomeCell", for: indexPath) as! AwesomeCell
+            cell.messageImageView.image = nil
+        }
         cell.messageLabel.text = awesome["message"] as? String
+
         
         return cell
     }

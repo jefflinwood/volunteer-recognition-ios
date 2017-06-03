@@ -12,6 +12,9 @@ PODS:
   - Firebase/Messaging (3.14.0):
     - Firebase/Core
     - FirebaseMessaging (= 1.2.2)
+  - Firebase/Storage (3.14.0):
+    - Firebase/Core
+    - FirebaseStorage (= 1.1.0)
   - FirebaseAnalytics (3.7.0):
     - FirebaseCore (~> 3.5)
     - FirebaseInstanceID (~> 1.0)
@@ -30,6 +33,12 @@ PODS:
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - FirebaseStorage (1.1.0):
+    - FirebaseAnalytics (~> 3.7)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI/Storage (3.1.0):
+    - Firebase/Storage
+    - SDWebImage (~> 4.0)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -44,6 +53,9 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - Protobuf (3.2.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
   - FaveButton (~> 2.0.3)
@@ -51,6 +63,8 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Messaging
+  - Firebase/Storage
+  - FirebaseUI/Storage
 
 SPEC CHECKSUMS:
   FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
@@ -61,10 +75,13 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
+  FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
+  FirebaseUI: d9e83c4c22dd922c661d85f041a771d1953405a9
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: eb8ada8ac61a139835ec467d4146af974585b733
+PODFILE CHECKSUM: e7c8b97e9d808ab55bcf98033aeef20cd212e5d3
 
 COCOAPODS: 1.2.1

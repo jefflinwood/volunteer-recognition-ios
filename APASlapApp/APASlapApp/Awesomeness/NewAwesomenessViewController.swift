@@ -10,9 +10,13 @@ import UIKit
 
 import Firebase
 
-class NewAwesomenessViewController: UIViewController {
+class NewAwesomenessViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var databaseReference = FIRDatabase.database().reference(withPath: "awesomes")
+    let databaseReference = FIRDatabase.database().reference(withPath: "awesomes")
+    let imagesStorageRef = FIRStorage.storage().reference().child("images")
+    
+    var imageStorageRefId:String?
+
     
     @IBOutlet weak var addButton: UIButton!
     
@@ -35,15 +39,53 @@ class NewAwesomenessViewController: UIViewController {
     
     @IBAction func add(_ sender: Any) {
         let userId = FIRAuth.auth()!.currentUser?.uid
+        
+        var data = ["message": messageTextView.text,
+                    "userId": userId]
+        
+        if let imageStorageRefId = imageStorageRefId {
+            data["imageStorageRefId"] = imageStorageRefId
+        }
 
         databaseReference.childByAutoId().setValue(
-            ["message": messageTextView.text,
-             "userId": userId]
+            data
         )
         dismiss(animated: true, completion: nil)
 
     }
 
 
+    @IBAction func addAPhoto(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if let imageData = UIImageJPEGRepresentation(image,0.3) {
+                let imageMetadata = FIRStorageMetadata()
+                imageMetadata.contentType = "image/jpeg"
+                let imagePath = NSUUID().uuidString
+                let uploadTask = imagesStorageRef.child(imagePath).put(imageData, metadata: imageMetadata)
+                
+                uploadTask.observe(.success) { snapshot in
+                    self.imageStorageRefId = imagePath
+                    print("Uploaded image")
+                }
+                
+
+            }
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 
 }
