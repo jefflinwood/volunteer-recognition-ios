@@ -21,6 +21,7 @@ class NewAwesomenessViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var previewImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +66,7 @@ class NewAwesomenessViewController: UIViewController, UIImagePickerControllerDel
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.previewImageView.image = image
             if let imageData = UIImageJPEGRepresentation(image,0.3) {
                 let imageMetadata = FIRStorageMetadata()
                 imageMetadata.contentType = "image/jpeg"

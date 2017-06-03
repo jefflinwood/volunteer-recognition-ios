@@ -10,11 +10,13 @@ import UIKit
 
 import FaveButton
 import Firebase
+import FirebaseStorageUI
 
 class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var databaseReference = FIRDatabase.database().reference(withPath: "awesomes")
-    
+    let imagesStorageRef = FIRStorage.storage().reference().child("images")
+
     var awesomes = [[String:AnyObject]]()
     
     @IBOutlet weak var plusButton: FaveButton!
@@ -52,7 +54,10 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         let awesome = awesomes[indexPath.row]
         if (awesome["imageStorageRefId"] != nil) {
             cell = tableView.dequeueReusableCell(withIdentifier: "AwesomeCellWithImage", for: indexPath) as! AwesomeCell
-            cell.messageImageView.image = UIImage(named: "logo_apa")
+            let reference = imagesStorageRef.child(awesome["imageStorageRefId"] as! String)
+            let placeholderImage = UIImage(named: "logo_apa")
+
+            cell.messageImageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "AwesomeCell", for: indexPath) as! AwesomeCell
             cell.messageImageView.image = nil
