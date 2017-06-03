@@ -8,12 +8,34 @@
 
 import UIKit
 
-class NewsFeedViewController: UIViewController {
+import FaveButton
+import Firebase
+
+class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var databaseReference = FIRDatabase.database().reference(withPath: "awesomes")
+    
+    var awesomes = [[String:AnyObject]]()
+    
+    @IBOutlet weak var plusButton: FaveButton!
+    
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        tableView.estimatedRowHeight = 60
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Watch for new awesomes!
+        databaseReference.observe(.childAdded, with: { (snapshot) -> Void in
+            self.awesomes.insert(snapshot.value as! [String:AnyObject], at: 0)
+            self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.automatic)
+        })
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +43,16 @@ class NewsFeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return awesomes.count
     }
-    */
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AwesomeCell", for: indexPath) as! AwesomeCell
+        let awesome = awesomes[indexPath.row]
+        cell.messageLabel.text = awesome["message"] as? String
+        
+        return cell
+    }
 
 }

@@ -10,4 +10,6 @@ target 'APASlapApp' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'	
   pod 'Firebase/Messaging'	
+
+  pod 'FaveButton', '~> 2.0.3'
 end

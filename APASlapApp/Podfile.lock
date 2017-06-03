@@ -1,4 +1,5 @@
 PODS:
+  - FaveButton (2.0.3)
   - Firebase/Auth (3.14.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -45,12 +46,14 @@ PODS:
   - Protobuf (3.2.0)
 
 DEPENDENCIES:
+  - FaveButton (~> 2.0.3)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Messaging
 
 SPEC CHECKSUMS:
+  FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
   Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -62,6 +65,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
 
-PODFILE CHECKSUM: c23aaec14eeccf3f95a5488a74ce0fb8e02b4c44
+PODFILE CHECKSUM: eb8ada8ac61a139835ec467d4146af974585b733
 
 COCOAPODS: 1.2.1

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +21,78 @@
                     <view key="view" contentMode="scaleToFill" id="d7M-YQ-2ld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDy-HG-lj2">
+                                <rect key="frame" x="299" y="28" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xpl-p4-k7K"/>
+                                    <constraint firstAttribute="width" constant="60" id="zlc-SC-Zmf"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="add:" destination="fdX-Vb-FY4" eventType="touchUpInside" id="lJn-c8-yUi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-9c-IL1">
+                                <rect key="frame" x="16" y="28" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="9Fg-Pc-9NI"/>
+                                    <constraint firstAttribute="height" constant="30" id="SmB-fH-Ji5"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="fdX-Vb-FY4" eventType="touchUpInside" id="y3h-WP-nwY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a SLAP!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDY-7W-B7a">
+                                <rect key="frame" x="140" y="33" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JqH-6n-d4r">
+                                <rect key="frame" x="16" y="110" width="343" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qVk-cB-v5i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to share?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ch-gN-zPl">
+                                <rect key="frame" x="16" y="81" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wn9-TI-9G8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JqH-6n-d4r" firstAttribute="top" secondItem="9ch-gN-zPl" secondAttribute="bottom" constant="8" id="314-C3-yt2"/>
+                            <constraint firstItem="qDY-7W-B7a" firstAttribute="centerX" secondItem="d7M-YQ-2ld" secondAttribute="centerX" id="8y9-hf-gHc"/>
+                            <constraint firstItem="9ch-gN-zPl" firstAttribute="trailing" secondItem="d7M-YQ-2ld" secondAttribute="trailingMargin" id="E6E-cf-Ydx"/>
+                            <constraint firstItem="JqH-6n-d4r" firstAttribute="trailing" secondItem="9ch-gN-zPl" secondAttribute="trailing" id="G1a-fY-Xmb"/>
+                            <constraint firstItem="JqH-6n-d4r" firstAttribute="leading" secondItem="9ch-gN-zPl" secondAttribute="leading" id="I9e-oK-32R"/>
+                            <constraint firstItem="yO2-9c-IL1" firstAttribute="top" secondItem="5kL-pe-n0Q" secondAttribute="bottom" constant="8" id="V6h-5s-Z68"/>
+                            <constraint firstItem="WDy-HG-lj2" firstAttribute="trailing" secondItem="d7M-YQ-2ld" secondAttribute="trailingMargin" id="a8O-a4-W2I"/>
+                            <constraint firstItem="WDy-HG-lj2" firstAttribute="centerY" secondItem="yO2-9c-IL1" secondAttribute="centerY" id="cKi-Sn-Azw"/>
+                            <constraint firstItem="9ch-gN-zPl" firstAttribute="leading" secondItem="d7M-YQ-2ld" secondAttribute="leadingMargin" id="cYP-e9-aIo"/>
+                            <constraint firstItem="9ch-gN-zPl" firstAttribute="top" secondItem="yO2-9c-IL1" secondAttribute="bottom" constant="23" id="e6E-IX-3dP"/>
+                            <constraint firstItem="qDY-7W-B7a" firstAttribute="centerY" secondItem="yO2-9c-IL1" secondAttribute="centerY" id="iib-rt-KtO"/>
+                            <constraint firstItem="yO2-9c-IL1" firstAttribute="leading" secondItem="d7M-YQ-2ld" secondAttribute="leadingMargin" id="oXc-25-tal"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="WDy-HG-lj2" id="oKI-nr-JEG"/>
+                        <outlet property="messageTextView" destination="JqH-6n-d4r" id="hLN-mH-W4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvU-2g-VW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="162"/>
+            <point key="canvasLocation" x="200.80000000000001" y="161.46926536731635"/>
         </scene>
     </scenes>
 </document>
