@@ -57,6 +57,16 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         // Do any additional setup after loading the view.
         styleButton(button: updateDisplayNameButton)
         styleButton(button: chooseProfilePhotoButton)
+        if let auth = FIRAuth.auth() {
+            if let photoURL = auth.currentUser?.photoURL {
+                profileImageView.sd_setImage(with: photoURL)
+            } else {
+                profileImageView.image = UIImage(named: "logo_apa")
+            }
+            if let displayName = auth.currentUser?.displayName {
+                displayNameTextField.text = displayName
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +75,9 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        //TODO: Refactor this monster!
+        
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.profileImageView.image = image
             if let imageData = UIImageJPEGRepresentation(image,0.3) {
