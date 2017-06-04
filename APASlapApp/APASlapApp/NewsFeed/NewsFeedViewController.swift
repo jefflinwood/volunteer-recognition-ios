@@ -12,7 +12,7 @@ import FaveButton
 import Firebase
 import FirebaseStorageUI
 
-class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FaveButtonDelegate {
     
     var databaseReference = FIRDatabase.database().reference(withPath: "awesomes")
     let imagesStorageRef = FIRStorage.storage().reference().child("images")
@@ -23,13 +23,21 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var topToolbarView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        plusButton.delegate = self
         
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        topToolbarView.layer.shadowOffset = CGSize(width: 0, height: 0.4)
+        topToolbarView.layer.shadowRadius = 4.0
+        topToolbarView.layer.shadowColor = UIColor.black.cgColor
+        topToolbarView.layer.shadowOpacity = 0.6
         
         // Watch for new awesomes!
         databaseReference.observe(.childAdded, with: { (snapshot) -> Void in
@@ -66,6 +74,15 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
 
         
         return cell
+    }
+    
+    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+        sleep(1)
+        faveButton.isSelected = false
+        let storyboard = UIStoryboard.init(name: "NewAwesomeness", bundle: nil)
+        if let vc = storyboard.instantiateInitialViewController() {
+            present(vc, animated: false, completion: nil)
+        }
     }
 
 }

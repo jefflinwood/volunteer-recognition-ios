@@ -28,7 +28,10 @@
                                     <constraint firstAttribute="height" constant="30" id="xpl-p4-k7K"/>
                                     <constraint firstAttribute="width" constant="60" id="zlc-SC-Zmf"/>
                                 </constraints>
-                                <state key="normal" title="Add"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="add:" destination="fdX-Vb-FY4" eventType="touchUpInside" id="lJn-c8-yUi"/>
                                 </connections>
@@ -39,15 +42,18 @@
                                     <constraint firstAttribute="width" constant="60" id="9Fg-Pc-9NI"/>
                                     <constraint firstAttribute="height" constant="30" id="SmB-fH-Ji5"/>
                                 </constraints>
-                                <state key="normal" title="Cancel"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cancel:" destination="fdX-Vb-FY4" eventType="touchUpInside" id="y3h-WP-nwY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a SLAP!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDY-7W-B7a">
-                                <rect key="frame" x="140" y="33" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="125" y="29" width="125.5" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JqH-6n-d4r">
@@ -56,7 +62,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="qVk-cB-v5i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.86666666670000003" green="0.34901960780000002" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to share?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ch-gN-zPl">
@@ -64,16 +71,20 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wn9-TI-9G8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nba-GW-ZJd">
                                 <rect key="frame" x="16" y="218" width="343" height="44"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.34901960780000002" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BCF-2Z-w23"/>
                                 </constraints>
-                                <state key="normal" title="Add a Photo from your Library"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Add a Photo from your Library">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="addAPhoto:" destination="fdX-Vb-FY4" eventType="touchUpInside" id="VNn-aY-HeN"/>
                                 </connections>
@@ -85,7 +96,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.77577039930555558" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.60392156860000001" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q5R-pp-aRi" firstAttribute="top" secondItem="nba-GW-ZJd" secondAttribute="bottom" constant="8" id="2r6-hB-O9o"/>
                             <constraint firstItem="JqH-6n-d4r" firstAttribute="top" secondItem="9ch-gN-zPl" secondAttribute="bottom" constant="8" id="314-C3-yt2"/>
@@ -108,6 +119,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAPhotoButton" destination="nba-GW-ZJd" id="FSn-Ur-bww"/>
                         <outlet property="addButton" destination="WDy-HG-lj2" id="oKI-nr-JEG"/>
                         <outlet property="messageTextView" destination="JqH-6n-d4r" id="hLN-mH-W4g"/>
                         <outlet property="previewImageView" destination="q5R-pp-aRi" id="d3A-lC-GML"/>

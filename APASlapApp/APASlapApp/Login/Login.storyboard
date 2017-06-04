@@ -199,6 +199,7 @@
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="OMW-Uz-16L" id="6oX-VI-2ur"/>
                         <outlet property="emailTextField" destination="wGe-lw-KfZ" id="NfP-qy-fO2"/>
+                        <outlet property="fullNameTextField" destination="pnC-Eb-iiH" id="xtj-yE-pYi"/>
                         <outlet property="passwordTextField" destination="rMd-Yy-BnZ" id="Dd8-Az-78s"/>
                     </connections>
                 </viewController>

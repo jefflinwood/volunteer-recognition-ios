@@ -12,6 +12,9 @@ import Firebase
 
 class RegisterViewController: BaseViewController {
     
+    var usersReference = FIRDatabase.database().reference(withPath: "users")
+
+    @IBOutlet weak var fullNameTextField: UITextField!
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -44,6 +47,7 @@ class RegisterViewController: BaseViewController {
         
         let email = emailTextField.text!
         let password = passwordTextField.text!
+        let fullName = fullNameTextField.text!
         
         if let auth = FIRAuth.auth() {
             auth.createUser(withEmail: email, password: password) { (user, error) in
@@ -51,7 +55,18 @@ class RegisterViewController: BaseViewController {
                     self.showErrorMessage(errorMessage:error.localizedDescription)
                     return
                 } else {
-                    self.navigationController?.popViewController(animated: true)
+                    //save user data like the full name
+                    let changeRequest = auth.currentUser?.profileChangeRequest()
+                    changeRequest?.displayName = fullName
+                    changeRequest?.commitChanges { (error) in
+                        if let error = error {
+                            self.showErrorMessage(errorMessage:error.localizedDescription)
+                            return
+                        } else {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                    
                 }
             }
 
