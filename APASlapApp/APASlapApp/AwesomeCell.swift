@@ -14,11 +14,17 @@ class AwesomeCell: UITableViewCell {
 
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageImageView: UIImageView!
+    
+    @IBOutlet weak var authorImageView: UIImageView!
 
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        authorImageView.layer.cornerRadius = 22
+        authorImageView.layer.borderColor = UIColor.lightGray.cgColor
+        authorImageView.layer.borderWidth = 1
+        authorImageView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

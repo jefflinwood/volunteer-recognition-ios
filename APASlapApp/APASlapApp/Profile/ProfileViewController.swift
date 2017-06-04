@@ -31,7 +31,7 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
                     self.showErrorMessage(errorMessage:error.localizedDescription)
                     return
                 } else {
-                    self.showMessage(title: "Thanks", message: "Your display name has been updated")
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }
@@ -99,7 +99,8 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
                                         self.showErrorMessage(errorMessage:error.localizedDescription)
                                         return
                                     } else {
-                                        self.showMessage(title: "Thanks", message: "Your profile photo has been updated")
+                                        //self.showMessage(title: "Thanks", message: "Your profile photo has been updated")
+                                        self.dismiss(animated: true, completion: nil)
                                     }
                             }
                         })

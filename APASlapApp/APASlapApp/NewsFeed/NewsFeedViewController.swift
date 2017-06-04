@@ -73,6 +73,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         }
         cell.messageLabel.text = awesome["message"] as? String
         let displayName = awesome["authorDisplayName"] as? String
+        let authorPhotoURL = awesome["authorPhotoURL"] as? String
         var timeAgo = ""
         if let timestamp = awesome["timestamp"] as? NSNumber {
             let awesomeDate = Date(timeIntervalSince1970: timestamp.doubleValue)
@@ -85,7 +86,12 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
             cell.titleLabel.text = "SLAPped"
         }
         
-        
+        if let authorPhotoURL = authorPhotoURL {
+            let url = URL(string: authorPhotoURL)
+            cell.authorImageView.sd_setImage(with: url, placeholderImage: nil)
+        } else {
+            cell.authorImageView.image = UIImage(named: "logo_apa")
+        }
         return cell
     }
     
