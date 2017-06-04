@@ -10,6 +10,8 @@ import UIKit
 
 class AwesomeCell: UITableViewCell {
     
+    @IBOutlet weak var titleLabel: UILabel!
+
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageImageView: UIImageView!
 

@@ -52,10 +52,23 @@ class NewAwesomenessViewController: BaseViewController, UIImagePickerControllerD
     }
     
     @IBAction func add(_ sender: Any) {
-        let userId = FIRAuth.auth()!.currentUser?.uid
+        let currentUser = FIRAuth.auth()!.currentUser
+        let authorId = currentUser?.uid
+        
         
         var data = ["message": messageTextView.text,
-                    "userId": userId]
+                    "authorId": authorId,
+                    "timestamp": NSDate().timeIntervalSince1970] as [String : Any]
+        
+        if let authorDisplayName = currentUser?.displayName {
+            data["authorDisplayName"] = authorDisplayName
+        } else {
+            data["authorDisplayName"] = currentUser?.email
+        }
+        
+        if let authorPhotoURL = currentUser?.photoURL {
+            data["authorPhotoURL"] = authorPhotoURL.absoluteString
+        }
         
         if let imageStorageRefId = imageStorageRefId {
             data["imageStorageRefId"] = imageStorageRefId

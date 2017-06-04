@@ -50,7 +50,10 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func tapView(_ sender: Any) {
+        displayNameTextField.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

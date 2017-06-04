@@ -71,7 +71,8 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
             cell.messageImageView.image = nil
         }
         cell.messageLabel.text = awesome["message"] as? String
-
+        let displayName = awesome["authorDisplayName"] as? String
+        cell.titleLabel.text =
         
         return cell
     }
