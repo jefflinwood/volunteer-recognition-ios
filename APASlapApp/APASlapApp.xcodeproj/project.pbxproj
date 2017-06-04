@@ -23,6 +23,8 @@
 		28E0D39D1EE3258100636841 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D39C1EE3258100636841 /* BaseViewController.swift */; };
 		28E0D3A11EE3609500636841 /* AwesomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3A01EE3609500636841 /* AwesomeCell.swift */; };
 		28E0D3A31EE45E6200636841 /* UserPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3A21EE45E6100636841 /* UserPickerViewController.swift */; };
+		28E0D3A61EE4727B00636841 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3A51EE4727900636841 /* ProfileViewController.swift */; };
+		28E0D3A81EE4728B00636841 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E0D3A71EE4728B00636841 /* Profile.storyboard */; };
 		71B789E7C20129CCA5F73A3F /* Pods_APASlapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		28E0D39C1EE3258100636841 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		28E0D3A01EE3609500636841 /* AwesomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCell.swift; sourceTree = "<group>"; };
 		28E0D3A21EE45E6100636841 /* UserPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPickerViewController.swift; path = Awesomeness/UserPickerViewController.swift; sourceTree = "<group>"; };
+		28E0D3A51EE4727900636841 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Profile/ProfileViewController.swift; sourceTree = "<group>"; };
+		28E0D3A71EE4728B00636841 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = Profile/Profile.storyboard; sourceTree = "<group>"; };
 		5A6929A4C8744EF2997B634D /* Pods-APASlapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.debug.xcconfig"; sourceTree = "<group>"; };
 		648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APASlapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EF2C0E3E5CCC7C022A089 /* Pods-APASlapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 		28E0D3711EE313FB00636841 /* APASlapApp */ = {
 			isa = PBXGroup;
 			children = (
+				28E0D3A41EE4725300636841 /* Profile */,
 				28E0D3901EE319DE00636841 /* Awesomeness */,
 				28E0D38B1EE3189500636841 /* NewsFeed */,
 				28E0D3861EE317E100636841 /* Login and Signup */,
@@ -126,6 +131,15 @@
 				28E0D3A21EE45E6100636841 /* UserPickerViewController.swift */,
 			);
 			name = Awesomeness;
+			sourceTree = "<group>";
+		};
+		28E0D3A41EE4725300636841 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				28E0D3A51EE4727900636841 /* ProfileViewController.swift */,
+				28E0D3A71EE4728B00636841 /* Profile.storyboard */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		8C43272D0F2A81F043BB9BB8 /* Frameworks */ = {
@@ -210,6 +224,7 @@
 			files = (
 				28E0D37D1EE313FB00636841 /* LaunchScreen.storyboard in Resources */,
 				28E0D38F1EE318DA00636841 /* NewsFeed.storyboard in Resources */,
+				28E0D3A81EE4728B00636841 /* Profile.storyboard in Resources */,
 				28E0D3921EE31A0200636841 /* NewAwesomeness.storyboard in Resources */,
 				28E0D37A1EE313FB00636841 /* Assets.xcassets in Resources */,
 				28E0D3781EE313FB00636841 /* Main.storyboard in Resources */,
@@ -275,6 +290,7 @@
 			files = (
 				28E0D38A1EE3187800636841 /* LoginViewController.swift in Sources */,
 				28E0D3751EE313FB00636841 /* ViewController.swift in Sources */,
+				28E0D3A61EE4727B00636841 /* ProfileViewController.swift in Sources */,
 				28E0D3731EE313FB00636841 /* AppDelegate.swift in Sources */,
 				28E0D3991EE3204D00636841 /* RegisterViewController.swift in Sources */,
 				28E0D3961EE31A4500636841 /* NewAwesomenessViewController.swift in Sources */,

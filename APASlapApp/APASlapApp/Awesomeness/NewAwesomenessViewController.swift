@@ -10,7 +10,7 @@ import UIKit
 
 import Firebase
 
-class NewAwesomenessViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewAwesomenessViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let databaseReference = FIRDatabase.database().reference(withPath: "awesomes")
     
@@ -27,16 +27,20 @@ class NewAwesomenessViewController: UIViewController, UIImagePickerControllerDel
     
     @IBOutlet weak var addAPhotoButton: UIButton!
     
+    @IBOutlet weak var takeAPhotoButton: UIButton!
+    
+    @IBOutlet weak var tagVolunteersButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        addAPhotoButton.layer.borderColor = UIColor.white.cgColor
-        addAPhotoButton.layer.borderWidth = 1.0
-        addAPhotoButton.layer.cornerRadius = 4.0
+        styleButton(button: addAPhotoButton)
+        styleButton(button: takeAPhotoButton)
+        styleButton(button: tagVolunteersButton)
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

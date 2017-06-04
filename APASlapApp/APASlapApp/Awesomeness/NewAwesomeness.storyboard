@@ -114,7 +114,6 @@
                                 <rect key="frame" x="16" y="482" width="343" height="44"/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.34901960780000002" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="t4n-aY-fzZ"/>
                                     <constraint firstAttribute="height" constant="44" id="wll-oZ-oQ0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
@@ -184,6 +183,8 @@
                         <outlet property="addButton" destination="WDy-HG-lj2" id="oKI-nr-JEG"/>
                         <outlet property="messageTextView" destination="JqH-6n-d4r" id="hLN-mH-W4g"/>
                         <outlet property="previewImageView" destination="q5R-pp-aRi" id="d3A-lC-GML"/>
+                        <outlet property="tagVolunteersButton" destination="CHF-fd-qlf" id="Xu3-GN-3l0"/>
+                        <outlet property="takeAPhotoButton" destination="Sg6-Nq-SqG" id="Gdj-fk-XgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvU-2g-VW9" userLabel="First Responder" sceneMemberID="firstResponder"/>

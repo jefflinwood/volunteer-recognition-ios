@@ -161,13 +161,29 @@
                                             <constraint firstAttribute="height" constant="20" id="6PC-5o-Bok"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpU-3t-UHT">
+                                        <rect key="frame" x="307" y="34" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="gvK-aU-lmO"/>
+                                            <constraint firstAttribute="width" constant="60" id="xbh-6M-Nmh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Me">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="XBE-oa-dlu" kind="presentation" id="gsI-He-BQO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.60392156862745094" green="0.72156862745098038" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mpU-3t-UHT" secondAttribute="trailing" constant="8" id="1de-rc-Mrr"/>
                                     <constraint firstItem="Fgu-vt-R6U" firstAttribute="leading" secondItem="ufi-JM-hBn" secondAttribute="leading" id="Dmw-2O-biR"/>
                                     <constraint firstItem="eMa-Rn-9nX" firstAttribute="centerX" secondItem="ufi-JM-hBn" secondAttribute="centerX" id="N6B-Ef-4GC"/>
                                     <constraint firstAttribute="height" constant="78" id="O6u-29-F96"/>
                                     <constraint firstItem="Fgu-vt-R6U" firstAttribute="top" secondItem="ufi-JM-hBn" secondAttribute="top" id="Q5f-Yx-iic"/>
+                                    <constraint firstItem="mpU-3t-UHT" firstAttribute="top" secondItem="Fgu-vt-R6U" secondAttribute="bottom" constant="14" id="RrM-DS-cKY"/>
                                     <constraint firstItem="eMa-Rn-9nX" firstAttribute="top" secondItem="ufi-JM-hBn" secondAttribute="top" constant="33" id="dP1-u1-w6z"/>
                                     <constraint firstAttribute="trailing" secondItem="Fgu-vt-R6U" secondAttribute="trailing" id="lMG-Cz-sxS"/>
                                 </constraints>
@@ -199,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="92" y="111.0944527736132"/>
         </scene>
-        <!--NewAwesomeness-->
+        <!--Profile-->
         <scene sceneID="9Vn-aH-py5">
             <objects>
-                <viewControllerPlaceholder storyboardName="NewAwesomeness" id="XBE-oa-dlu" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="XBE-oa-dlu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ck8-dI-jeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713" y="84"/>
