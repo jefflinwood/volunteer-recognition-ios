@@ -70,7 +70,17 @@ class NewAwesomenessViewController: UIViewController, UIImagePickerControllerDel
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true)
-        
+    }
+    
+    @IBAction func useCamera(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true)
+    }
+    
+    @IBAction func tapView(_ sender: Any) {
+        messageTextView.resignFirstResponder()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

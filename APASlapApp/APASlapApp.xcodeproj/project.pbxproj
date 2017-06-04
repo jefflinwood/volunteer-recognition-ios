@@ -22,6 +22,7 @@
 		28E0D3991EE3204D00636841 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3981EE3204D00636841 /* RegisterViewController.swift */; };
 		28E0D39D1EE3258100636841 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D39C1EE3258100636841 /* BaseViewController.swift */; };
 		28E0D3A11EE3609500636841 /* AwesomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3A01EE3609500636841 /* AwesomeCell.swift */; };
+		28E0D3A31EE45E6200636841 /* UserPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0D3A21EE45E6100636841 /* UserPickerViewController.swift */; };
 		71B789E7C20129CCA5F73A3F /* Pods_APASlapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		28E0D3981EE3204D00636841 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Login/RegisterViewController.swift; sourceTree = "<group>"; };
 		28E0D39C1EE3258100636841 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		28E0D3A01EE3609500636841 /* AwesomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCell.swift; sourceTree = "<group>"; };
+		28E0D3A21EE45E6100636841 /* UserPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPickerViewController.swift; path = Awesomeness/UserPickerViewController.swift; sourceTree = "<group>"; };
 		5A6929A4C8744EF2997B634D /* Pods-APASlapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.debug.xcconfig"; sourceTree = "<group>"; };
 		648459AF43C67B3F241C5E67 /* Pods_APASlapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APASlapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1EF2C0E3E5CCC7C022A089 /* Pods-APASlapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APASlapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-APASlapApp/Pods-APASlapApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				28E0D3951EE31A4500636841 /* NewAwesomenessViewController.swift */,
 				28E0D3911EE31A0200636841 /* NewAwesomeness.storyboard */,
+				28E0D3A21EE45E6100636841 /* UserPickerViewController.swift */,
 			);
 			name = Awesomeness;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				28E0D3991EE3204D00636841 /* RegisterViewController.swift in Sources */,
 				28E0D3961EE31A4500636841 /* NewAwesomenessViewController.swift in Sources */,
 				28E0D3A11EE3609500636841 /* AwesomeCell.swift in Sources */,
+				28E0D3A31EE45E6200636841 /* UserPickerViewController.swift in Sources */,
 				28E0D39D1EE3258100636841 /* BaseViewController.swift in Sources */,
 				28E0D38D1EE318C900636841 /* NewsFeedViewController.swift in Sources */,
 			);

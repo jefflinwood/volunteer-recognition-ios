@@ -36,6 +36,8 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app would like to use your photo library to add photos to messages</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app would like to use the camera to add photos to messages</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

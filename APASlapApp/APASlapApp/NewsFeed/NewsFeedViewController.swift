@@ -77,7 +77,6 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
-        sleep(1)
         faveButton.isSelected = false
         let storyboard = UIStoryboard.init(name: "NewAwesomeness", bundle: nil)
         if let vc = storyboard.instantiateInitialViewController() {
