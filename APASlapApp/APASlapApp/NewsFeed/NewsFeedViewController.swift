@@ -8,6 +8,7 @@
 
 import UIKit
 
+import DateToolsSwift
 import FaveButton
 import Firebase
 import FirebaseStorageUI
@@ -72,7 +73,18 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         }
         cell.messageLabel.text = awesome["message"] as? String
         let displayName = awesome["authorDisplayName"] as? String
-        cell.titleLabel.text =
+        var timeAgo = ""
+        if let timestamp = awesome["timestamp"] as? NSNumber {
+            let awesomeDate = Date(timeIntervalSince1970: timestamp.doubleValue)
+            timeAgo = awesomeDate.timeAgoSinceNow
+        }
+        
+        if let displayName = displayName {
+            cell.titleLabel.text = "\(displayName) SLAPped \(timeAgo)"
+        } else {
+            cell.titleLabel.text = "SLAPped"
+        }
+        
         
         return cell
     }

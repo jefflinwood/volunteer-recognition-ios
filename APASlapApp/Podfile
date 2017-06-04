@@ -14,4 +14,8 @@ target 'APASlapApp' do
   pod 'FirebaseUI/Storage'
 
   pod 'FaveButton', '~> 2.0.3'
+
+  pod 'DateToolsSwift'
+
+
 end

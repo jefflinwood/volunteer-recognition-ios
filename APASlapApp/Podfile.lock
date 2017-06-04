@@ -1,4 +1,5 @@
 PODS:
+  - DateToolsSwift (2.0.3)
   - FaveButton (2.0.3)
   - Firebase/Auth (3.14.0):
     - Firebase/Core
@@ -58,6 +59,7 @@ PODS:
   - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
+  - DateToolsSwift
   - FaveButton (~> 2.0.3)
   - Firebase/Auth
   - Firebase/Core
@@ -67,6 +69,7 @@ DEPENDENCIES:
   - FirebaseUI/Storage
 
 SPEC CHECKSUMS:
+  DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
   FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
   Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
@@ -82,6 +85,6 @@ SPEC CHECKSUMS:
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: e7c8b97e9d808ab55bcf98033aeef20cd212e5d3
+PODFILE CHECKSUM: 53a3d820b705bb3296af0f498dfe7f3bbb0ea632
 
 COCOAPODS: 1.2.1
