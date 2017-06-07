@@ -13,12 +13,13 @@ import FaveButton
 import Firebase
 import FirebaseStorageUI
 
-class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FaveButtonDelegate {
+class NewsFeedViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, FaveButtonDelegate {
     
     var databaseReference = FIRDatabase.database().reference(withPath: "awesomes")
     let imagesStorageRef = FIRStorage.storage().reference().child("images")
 
     var awesomes = [[String:AnyObject]]()
+    
     
     @IBOutlet weak var plusButton: FaveButton!
     
@@ -30,19 +31,20 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.isHidden = true
+        
         plusButton.delegate = self
         
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        topToolbarView.layer.shadowOffset = CGSize(width: 0, height: 0.4)
-        topToolbarView.layer.shadowRadius = 4.0
-        topToolbarView.layer.shadowColor = UIColor.black.cgColor
-        topToolbarView.layer.shadowOpacity = 0.6
+        styleTopToolbar(topToolbarView: topToolbarView)
         
         // Watch for new awesomes!
         databaseReference.observe(.childAdded, with: { (snapshot) -> Void in
-            self.awesomes.insert(snapshot.value as! [String:AnyObject], at: 0)
+            var data = snapshot.value as! [String:AnyObject]
+            data["awesomeKey"] = snapshot.key as AnyObject
+            self.awesomes.insert(data, at: 0)
             self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.automatic)
         })
 
@@ -77,7 +79,14 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         var timeAgo = ""
         if let timestamp = awesome["timestamp"] as? NSNumber {
             let awesomeDate = Date(timeIntervalSince1970: timestamp.doubleValue)
-            timeAgo = awesomeDate.timeAgoSinceNow
+            timeAgo = awesomeDate.shortTimeAgoSinceNow
+        }
+        
+        if awesome["volunteerDisplayName"] != nil {
+            let volunteerDisplayName = awesome["volunteerDisplayName"] as! String
+            cell.volunteerDisplayNameLabel.text =  "\(volunteerDisplayName) was awesome!"
+        } else {
+            cell.volunteerDisplayNameLabel.text = ""
         }
         
         if let displayName = displayName {
@@ -93,6 +102,15 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
             cell.authorImageView.image = UIImage(named: "logo_apa")
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard.init(name: "AwesomeDetail", bundle: nil)
+        if let vc = storyboard.instantiateInitialViewController() as? AwesomeDetailViewController {
+            vc.awesome = awesomes[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {

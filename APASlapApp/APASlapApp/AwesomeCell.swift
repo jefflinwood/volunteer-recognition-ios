@@ -17,6 +17,7 @@ class AwesomeCell: UITableViewCell {
     
     @IBOutlet weak var authorImageView: UIImageView!
 
+    @IBOutlet weak var volunteerDisplayNameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

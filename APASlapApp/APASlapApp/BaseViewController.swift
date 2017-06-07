@@ -8,12 +8,23 @@
 
 import UIKit
 
+import Firebase
+
 class BaseViewController: UIViewController {
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func styleTopToolbar(topToolbarView: UIView) {
+        topToolbarView.layer.shadowOffset = CGSize(width: 0, height: 0.4)
+        topToolbarView.layer.shadowRadius = 4.0
+        topToolbarView.layer.shadowColor = UIColor.black.cgColor
+        topToolbarView.layer.shadowOpacity = 0.6
     }
 
     func styleButton(button: UIButton) {
